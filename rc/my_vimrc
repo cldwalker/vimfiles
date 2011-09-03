@@ -1,0 +1,25 @@
+"EOF
+	com! -nargs=1 -range Tabber call Replacetab(<line1>,<line2>,<f-args>)
+	"ab
+		ab so0 ~/.vimrc
+		ab so1 ~/.myvim
+		ab so2 ~/.vim/ftplugin/vo_base.vim
+		ab so3 ~/.vim/syntax/vo_base.vim
+		ab so4 ~/.vimoutliner/outliner.vim 
+	"plugins
+		"so $VIMRUNTIME/ftplugin/man.vim
+	"options
+		"au BufEnter *.otl :so ~/.vimoutliner/outliner.vim "worked after 'setf outliner' on one .otl
+		" Use perl compiler for all *.pl and *.pm files.
+		autocmd BufNewFile,BufRead *.p? compiler perl
+		filetype plugin on
+		filetype indent on
+		"set complete +=k
+		set wildmode=list:longest
+		set invsmartcase
+		set isf+=:
+		set ww+=h,l
+		set textwidth=100
+		"set runtimepath=~/.vim/,/usr/share/vim/vim61/
+	"misc
+		set notagbsearch

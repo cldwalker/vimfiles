@@ -1,0 +1,9 @@
+git://github.com/tpope/vim-rails.git
+git://github.com/tpope/vim-cucumber.git
+git://github.com/tpope/vim-git.git
+git://github.com/scrooloose/nerdtree.git
+git://github.com/mileszs/ack.vim.git
+git://github.com/godlygeek/tabular.git
+git://github.com/e2/vim-vimoutliner.git
+git://github.com/wincent/Command-T.git
+git://github.com/tjennings/git-grep-vim.git
