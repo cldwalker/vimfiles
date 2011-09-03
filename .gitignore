@@ -1,7 +1,6 @@
 tags
 *~
 *.swp
-.VimballRecord
+autoload/*
 undofiles/*
 projects/*
-.netrwhist
