@@ -19,9 +19,23 @@ This is my ~/.vim dir and _this_, dear reader, is a horse:
 Installation
 ============
 
-Clone the repo:
-`git clone https://github.com/cldwalker/vimfiles.git ~/.vim`
+Install will move existing ~/.vim* to ~/.vim*.old and installs plugins
 
-Install: `rake install`
+`git clone https://github.com/cldwalker/vimfiles.git ~/.vim && rake install`
 
-Install moves existing ~/.vim* to ~/.vim*.old and installs plugins
+Usage
+=====
+To update all plugins: `rake update`
+
+To add a vim plugin: `rake add PLUGIN=https://github.com/tpope/vim-fugitive.git`
+To remove a vim plugin: `rake rm PLUGIN=https://github.com/tpope/vim-fugitive.git`
+
+A github repo can be referenced as :name/:repo :
+`rake add PLUGIN=tpope/vim-fugitive`
+
+About
+=====
+This setup uses [pathogen](https://github.com/tpope/vim-pathogen) to allow each
+vim plugin its own directory. plugins.txt contains the list of active vim
+plugins and is simply a list of git repositories.
+

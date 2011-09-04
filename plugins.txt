@@ -7,3 +7,4 @@ git://github.com/godlygeek/tabular.git
 git://github.com/e2/vim-vimoutliner.git
 git://github.com/wincent/Command-T.git
 git://github.com/tjennings/git-grep-vim.git
+git://github.com/tpope/vim-fugitive.git

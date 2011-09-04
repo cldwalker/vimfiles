@@ -1,14 +1,29 @@
+require 'fileutils'
 DIR = File.dirname(__FILE__)
+
 def plugins
   File.read(DIR + '/plugins.txt').split("\n")
 end
 
+def save_plugins(plugins)
+  File.open("#{DIR}/plugins.txt", 'w+') {|f| f.write plugins.join("\n") }
+end
+
+def translate_plugin(name)
+  name[%r{^[^/]+/[^/]+$}] ? "git://github.com/#{name}.git" : name
+end
+
+def plugin_name(repo)
+  repo[/([^\/]+).git$/, 1].downcase
+end
+
+def install_plugin(repo)
+  sh "git clone #{repo} #{DIR}/plugins/#{plugin_name(repo)}"
+end
+
 desc "Clone plugins into ~/.vim/plugins"
 task :git_clone do
-  plugins.each do |plugin|
-    name = plugin[/([^\/]+).git/, 1].downcase
-    sh "git clone #{plugin} #{DIR}/plugins/#{name}"
-  end 
+  plugins.each {|plugin| install_plugin(plugin) }
 end
 
 desc "Update git plugins"
@@ -27,7 +42,6 @@ end
 
 desc "First time install downloads plugins, saves your old vim config and symlinks new one"
 task :install => [:get_pathogen, :git_clone] do
-  require 'fileutils'
   home = File.expand_path('~')
 
   %W{#{home}/.vim #{home}/.vimrc}.each do |path|
@@ -40,5 +54,19 @@ end
 
 desc "Update pathogen and plugins"
 task :update => [:get_pathogen, :git_update]
+
+desc "Add a vim plugin with PLUGIN=GIT_REPO"
+task :add do
+  repo = translate_plugin ENV['PLUGIN'] || abort("No plugin given")
+  install_plugin repo
+  save_plugins plugins << repo
+end
+
+desc "Remove a plugin with PLUGIN=GIT_REPO"
+task :rm do
+  repo = translate_plugin ENV['PLUGIN'] || abort("No plugin given")
+  FileUtils.rm_rf "#{DIR}/plugins/#{plugin_name(repo)}", :verbose => true
+  save_plugins plugins.tap {|ps| ps.delete repo }
+end
 
 task :default => :update
