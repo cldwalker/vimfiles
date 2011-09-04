@@ -16,6 +16,9 @@ set shiftwidth=2
 set autoindent
 set expandtab
 
+"initialize pathogen
+call pathogen#infect('plugins')
+
 source ~/.vim/rc/functions.vim
 source ~/.vim/rc/keys.vim
 source ~/.vim/rc/my_vimrc

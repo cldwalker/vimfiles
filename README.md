@@ -28,6 +28,7 @@ Usage
 To update all plugins: `rake update`
 
 To add a vim plugin: `rake add PLUGIN=https://github.com/tpope/vim-fugitive.git`
+
 To remove a vim plugin: `rake rm PLUGIN=https://github.com/tpope/vim-fugitive.git`
 
 A github repo can be referenced as :name/:repo :
