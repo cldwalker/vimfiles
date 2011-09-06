@@ -1,11 +1,15 @@
 "general
 set nocompatible
+"turn on syntax highlighting
 syntax on
+"load ft plugin and indent files
 filetype plugin indent on
 set backupdir=~/.vim/backup
+"highlight searches by default
 set hlsearch
-set history=50
+set history=100
 set ruler
+"allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 set viminfo='20,\"50,n~/.vim/viminfo
 
