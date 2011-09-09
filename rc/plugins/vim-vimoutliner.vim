@@ -2,6 +2,7 @@ map tv :!vo_maketags.pl %<CR>
 map ts  :stj _tag_
 "access any tag from anywhere in outline by typing its name (don't forget autocomplete)
 map ta  :ta _tag_
+map ,. :source ~/.vim/plugins/vim-vimoutliner/ftplugin/vo_base.vim<CR>
 
 "following is outline related but not dependant on vimoutliner
 function! Omove(in)

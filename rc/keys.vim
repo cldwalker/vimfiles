@@ -1,3 +1,6 @@
+"make Y consistent with C and D
+nnoremap Y y$
+
 "insert + command mode
 inoremap <C-B> <Home>
 inoremap <C-E> <End>
@@ -52,8 +55,10 @@ map of  :set foldmethod=expr <CR>
 map ow  :set invwildmenu <CR>
 map or  :set invwrap <CR>
 map ob  :set invswitchbuf <CR>
+
 "turn off highlightning
-map oh  :noh <CR>
+map oh  :nohls <CR>
+nnoremap <C-L> :nohls<CR><C-L>
 
 "shell cmds
 "cd to current file's directory
