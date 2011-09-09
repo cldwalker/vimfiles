@@ -10,6 +10,8 @@ noremap! <C-G> <S-Left>
 noremap! <C-T> <S-Right>
 inoremap <C-J> <Down>
 inoremap <C-K> <Up>
+"Insert directory of current file
+cmap <C-Y> <C-R>=expand("%:p:h") . "/" <CR>
 
 "windows
 noremap <C-J> <C-W>_
@@ -68,3 +70,6 @@ map am  :!chmod +x %<CR>
 map aw :new <BAR>r!
 "execute current file with given arguments + put result in new buffer
 map px  :let arg = inputdialog("Arguments?: ","") <BAR> exe "new <BAR> %! ./"."# ". arg <CR>
+
+" Opens an edit command with the directory of the current edited file filled in
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
