@@ -49,3 +49,5 @@ call pathogen#infect('plugins')
 
 "load keys, functions
 runtime! rc/*.vim
+"load plugin-specific files
+runtime! rc/plugins/*.vim
