@@ -1,18 +1,15 @@
 "general
-set nocompatible
-"turn on syntax highlighting
-syntax on
-"load ft plugin and indent files
+set nocompatible               "turn on syntax highlighting
+syntax on                      "load ft plugin and indent files
 filetype plugin indent on
 set backupdir=~/.vim/backup
-"highlight searches by default
-set hlsearch
+set hlsearch                   "highlight searches by default
 set history=100
 set ruler
-"allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+set backspace=indent,eol,start "allow backspacing over everything in insert mode
+set showcmd                    "show incomplete cmds down the bottom
+set textwidth=100
 set viminfo='20,\"50,n~/.vim/viminfo
-set showcmd     "show incomplete cmds down the bottom
 
 "tabs + whitespace
 set tabstop=2
@@ -21,21 +18,22 @@ set shiftwidth=2
 set autoindent
 set expandtab
 
+"completion
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*~           "stuff to ignore when tab completing
 
+"formatting
 set formatoptions-=o "dont continue comments when pushing o/O
+
+"scrolling
 set scrolloff=3
 set sidescrolloff=7
 
-"statusline setup
+"statusline
 set statusline=%f%m%r%h%w "defaults
 set statusline+=%y        "filetype
 set laststatus=2
-
-set textwidth=100
-colorscheme vibrantink
 
 "TODO
 "set complete +=k
@@ -44,6 +42,9 @@ set isf+=:
 set ww+=h,l
 set notagbsearch
 
+"Everything below is specific to this setup
+"==========================================
+
 "initialize pathogen
 call pathogen#infect('plugins')
 
@@ -51,3 +52,5 @@ call pathogen#infect('plugins')
 runtime! rc/*.vim
 "load plugin-specific files
 runtime! rc/plugins/*.vim
+
+colorscheme vibrantink
