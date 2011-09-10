@@ -1,4 +1,4 @@
-"general
+" general
 set nocompatible               "turn on syntax highlighting
 syntax on                      "load ft plugin and indent files
 filetype plugin indent on
@@ -11,46 +11,50 @@ set showcmd                    "show incomplete cmds down the bottom
 set textwidth=100
 set viminfo='20,\"50,n~/.vim/viminfo
 
-"tabs + whitespace
+" tabs + whitespace
 set tabstop=2
 set smarttab
 set shiftwidth=2
 set autoindent
 set expandtab
 
-"completion
-set wildmode=list:longest   "make cmdline tab completion similar to bash
+" command completion
+" first tab completes like bash, second tab completes first choice
+set wildmode=list:longest,list:full
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*~           "stuff to ignore when tab completing
 
-"formatting
+" insert completion
+" only complete common characters, show menu + preview
+set completeopt=longest,menu,preview
+" complete what's in buffers + tags
+set complete=.,b,u,t
+
+" formatting
 set formatoptions-=o "dont continue comments when pushing o/O
 
-"scrolling
+" scrolling
 set scrolloff=3
 set sidescrolloff=7
 
-"statusline
+" statusline
 set statusline=%f%m%r%h%w "defaults
 set statusline+=%y        "filetype
 set laststatus=2
 
-"TODO
-"set complete +=k
-set invsmartcase
-set isf+=:
-set ww+=h,l
-set notagbsearch
+" search - case only matters if searches contain uppercase chars
+set ignorecase
+set smartcase
 
-"Everything below is specific to this setup
-"==========================================
+" Everything below is specific to this setup
+" ==========================================
 
-"initialize pathogen
+" initialize pathogen
 call pathogen#infect('plugins')
 
-"load keys, functions
+" load keys, functions
 runtime! rc/*.vim
-"load plugin-specific files
+" load plugin-specific files
 runtime! rc/plugins/*.vim
 
 colorscheme vibrantink

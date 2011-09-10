@@ -21,3 +21,16 @@ fu! TagSelection()
   exec "normal `<i"  substitute( l:tag, '[ \t"]*\(\<.*\)', '<\1>\e', "" )
 endf	
 map wt  :call TagSelection()<CR>
+
+" Open URL - from ryanb/dotfiles
+command -bar -nargs=1 OpenURL :!open <args>
+function! OpenURL()
+  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
+  echo s:uri
+  if s:uri != ""
+    exec "!open \"" . s:uri . "\""
+  else
+    echo "No URI found in line."
+  endif
+endfunction
+map <Leader>w :call OpenURL()<CR>
