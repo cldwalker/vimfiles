@@ -1,0 +1,8 @@
+" only load this file once
+let g:autocmd_ruby_loaded=1
+
+" open yard doc for method
+map <Leader>h :exe "new <BAR> %!yri" expand("<cword>")<CR>
+
+"Maps autocomplete to tab
+imap <Tab> <C-N>

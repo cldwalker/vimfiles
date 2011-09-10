@@ -1,3 +1,4 @@
+" normal mode
 " make Y consistent with C and D
 nnoremap Y y$
 
@@ -13,6 +14,7 @@ inoremap <C-K> <Up>
 " Insert directory of current file
 cmap <C-Y> <C-R>=expand("%:p:h") . "/" <CR>
 
+" visual mode
 " Duplicate a visual selection
 vmap D y'>p
 
@@ -72,7 +74,7 @@ map am  :!chmod +x %<CR>
 " display shell command result in new window
 map aw :new <BAR>r!
 " execute current file with given arguments + put result in new buffer
-map px  :let arg = inputdialog("Arguments?: ","") <BAR> exe "new <BAR> %! ./"."# ". arg <CR>
+map ax  :let arg = inputdialog("Arguments?: ","") <BAR> exe "new <BAR> %! ./"."# ". arg <CR>
 
 " Opens an edit command with the directory of the current edited file filled in
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
