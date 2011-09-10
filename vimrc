@@ -28,7 +28,7 @@ set wildignore=*~           "stuff to ignore when tab completing
 " only complete common characters, show menu + preview
 set completeopt=longest,menu,preview
 " complete what's in buffers + tags
-set complete=.,b,u,t
+set complete=.,w,b,u,t
 
 " formatting
 set formatoptions-=o "dont continue comments when pushing o/O

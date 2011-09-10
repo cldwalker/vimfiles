@@ -4,13 +4,9 @@ map <Leader>c :Rcontroller
 map <Leader>v :Rview 
 map <Leader>u :Runittest 
 map <Leader>f :Rfunctionaltest 
-map <Leader>tm :RTmodel 
-map <Leader>tc :RTcontroller 
-map <Leader>tv :RTview 
-map <Leader>tu :RTunittest 
-map <Leader>tf :RTfunctionaltest 
-map <Leader>sm :RSmodel 
-map <Leader>sc :RScontroller 
-map <Leader>sv :RSview 
-map <Leader>su :RSunittest 
-map <Leader>sf :RSfunctionaltest
+map <Leader>i :Rintegrationtest
+
+" Rstep for step navigation
+autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
+" Rconfig for config navigation
+autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
