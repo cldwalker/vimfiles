@@ -10,8 +10,9 @@ set history=100
 set ruler
 set backspace=indent,eol,start "allow backspacing over everything in insert mode
 set showcmd                    "show incomplete cmds down the bottom
-set virtualedit=all            "allow editing beyond existing text in visual mode
+set virtualedit=block          "allow editing beyond existing text in visual mode
 set shortmess+=IA              "turn off intro + use all abbreviations
+set confirm                    "ask for confirmation on unsaved files instead of denying
 set textwidth=100
 set viminfo='20,\"50,n~/.vim/viminfo
 

@@ -6,3 +6,7 @@ map <Leader>h :exe "new <BAR> %!yri" expand("<cword>")<CR>
 
 "Maps autocomplete to tab
 imap <Tab> <C-N>
+
+" fold methods
+set foldmethod=syntax
+set foldlevel=2
