@@ -10,6 +10,8 @@ set history=100
 set ruler
 set backspace=indent,eol,start "allow backspacing over everything in insert mode
 set showcmd                    "show incomplete cmds down the bottom
+set virtualedit=all            "allow editing beyond existing text in visual mode
+set shortmess+=IA              "turn off intro + use all abbreviations
 set textwidth=100
 set viminfo='20,\"50,n~/.vim/viminfo
 
@@ -40,8 +42,9 @@ set scrolloff=3
 set sidescrolloff=7
 
 " statusline
-set statusline=%f%m%r%h%w "defaults
-set statusline+=%y        "filetype
+set statusline=%t%m%r%h%w       "defaults
+set statusline+=%y              "filetype
+set statusline+=\ %l/%L\ (%p%%) "line stats
 set laststatus=2
 
 " search - case only matters if searches contain uppercase chars
