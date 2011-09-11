@@ -2,8 +2,10 @@
 set nocompatible               "turn on syntax highlighting
 syntax on                      "load ft plugin and indent files
 filetype plugin indent on
-set backupdir=~/.vim/backup
+" swap files *.swp
+set directory=./tmp,/var/tmp,/tmp,.
 set hlsearch                   "highlight searches by default
+set incsearch
 set history=100
 set ruler
 set backspace=indent,eol,start "allow backspacing over everything in insert mode
@@ -46,9 +48,8 @@ set laststatus=2
 set ignorecase
 set smartcase
 
-" Everything below is specific to this setup
-" ==========================================
-
+" Everything below depends on files + directories in my git repo
+" ==============================================================
 " initialize pathogen
 call pathogen#infect('plugins')
 
@@ -58,3 +59,5 @@ runtime! rc/*.vim
 runtime! rc/plugins/*.vim
 
 colorscheme vibrantink
+" backup files *~
+set backupdir=~/.vim/backup

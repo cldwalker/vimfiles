@@ -1,3 +1,23 @@
+" quicker <Leader> mapping
+let mapleader=' '
+
+" Opens an edit command with the directory of the current edited file filled in
+nnoremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+" Quick-open .vimrc
+nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<CR>
+
+" Tab mappings
+map <Leader>te :tabedit
+map <Leader>tc :tabclose<CR>
+map <Leader>to :tabonly<CR>
+map <Leader>tn :tabnext<CR>
+map <Leader>tp :tabprevious<CR>
+map <Leader>tm :tabmove
+
+" movin in buffer list
+map <Leader>n  :cn<CR>
+map <Leader>p  :cp<CR>
+
 " normal mode
 " make Y consistent with C and D
 nnoremap Y y$
@@ -11,6 +31,7 @@ noremap! <C-G> <S-Left>
 noremap! <C-T> <S-Right>
 inoremap <C-J> <Down>
 inoremap <C-K> <Up>
+imap jj <Esc>
 " Insert directory of current file
 cmap <C-Y> <C-R>=expand("%:p:h") . "/" <CR>
 
@@ -18,21 +39,30 @@ cmap <C-Y> <C-R>=expand("%:p:h") . "/" <CR>
 " Duplicate a visual selection
 vmap D y'>p
 
+" always use 'very magic' mode (i.e. full regexps)
+nnoremap / /\v
+vnoremap / /\v
+
 " windows
 noremap <C-J> <C-W>_
 noremap <C-M> <C-W>=
 noremap x  :q<CR>
 noremap q :q!<CR>
-" can put same safeguard of C-w w + :bn in order to create #
-" disabled b/c too easily mistyped
-" map j <C-W>j
-" map k <C-W>k
+" split navigation
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
 
 " regexp
 " prepends each line with # and preserves indents,useful for programming
 map <C-I>c :s/^\(\s*\)/\1#/ <CR> <BAR>:noh<CR>
 " undoes the above, useful for programming
 map <C-I>d :s/^\(\s\+\)#/\1/ <CR> <BAR>:noh<CR>
+
+" always use 'very magic' mode (i.e. full regexps)
+nnoremap / /\v
+vnoremap / /\v
 
 " =alt keys=
 " mneumonics:t-tag,o-option,a-admin
@@ -51,17 +81,11 @@ map ,    :set imi=1<CR>
 " menu of file locations for current word, pick one to go to it
 map a  [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
-" options
+" toggle options
+set pastetoggle=ot
 map on  :set invnumber <CR>
-map om  :set invmagic <CR>
 map oa  :set invautowrite <CR>
-map oc  :set invignorecase <CR>
-map oi  :set invincsearch <CR>
 map ol  :set invlist <CR>
-map of  :set foldmethod=expr <CR>
-map ow  :set invwildmenu <CR>
-map or  :set invwrap <CR>
-map ob  :set invswitchbuf <CR>
 
 " turn off highlightning
 map oh  :nohls <CR>
@@ -75,6 +99,3 @@ map am  :!chmod +x %<CR>
 map aw :new <BAR>r!
 " execute current file with given arguments + put result in new buffer
 map ax  :let arg = inputdialog("Arguments?: ","") <BAR> exe "new <BAR> %! ./"."# ". arg <CR>
-
-" Opens an edit command with the directory of the current edited file filled in
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
