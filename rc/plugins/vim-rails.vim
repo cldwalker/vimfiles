@@ -1,10 +1,10 @@
 " Leader shortcuts for Rails commands
-map <Leader>m :Rmodel 
-map <Leader>c :Rcontroller 
-map <Leader>v :Rview 
-map <Leader>u :Runittest 
-map <Leader>f :Rfunctionaltest 
-map <Leader>i :Rintegrationtest
+map <Leader>rm :Rmodel
+map <Leader>rc :Rcontroller
+map <Leader>rv :Rview
+map <Leader>ru :Runittest
+map <Leader>rf :Rfunctionaltest
+map <Leader>ri :Rintegrationtest
 
 " Rstep for step navigation
 autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb

@@ -25,27 +25,15 @@ function! AutoCmdRubyOnce()
   endif
 endfunction
 
-" from wuputah/dotfiles
 " automatically remove trailing whitespace before write
-function! StripTrailingWhitespace()
+function! ConditionalStripTrailingWhitespace()
   if exists("b:stripWhitespace") && b:stripWhitespace == 1 && g:stripWhitespace == 1
-    " create a mark to return to
-    normal mZ
-    %s/\s\+$//e   " strip whitespace from end of lines
-    %s/\n\+\%$//e " strip extra newlines from EOF
-    if line("'Z") != line(".")
-      echo "Stripped whitespace\n"
-    endif
-    " if the mark we created is beyond EOF, go to EOF
-    if line("'Z") > line("$")
-      normal G
-    else
-      normal `Z
-    endif
-  endif
+    call StripTrailingWhiteSpace()
+  end
 endfunction
+
 autocmd FileType ruby,eruby,javascript,css,html,markdown,textile let b:stripWhitespace = 1
-autocmd BufWritePre * call StripTrailingWhitespace()
+autocmd BufWritePre * call ConditionalStripTrailingWhitespace()
 " Allow turning off stripping globally i.e. for certain open source projects
 let g:stripWhitespace=1
 

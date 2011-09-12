@@ -1,6 +1,3 @@
-" quicker <Leader> mapping
-let mapleader=' '
-
 " Opens an edit command with the directory of the current edited file filled in
 nnoremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " Quick-open .vimrc
@@ -23,17 +20,24 @@ map <Leader>p  :cp<CR>
 nnoremap Y y$
 
 " insert + command mode
-inoremap <C-B> <Home>
-inoremap <C-E> <End>
 noremap! <C-H> <Left>
 noremap! <C-L> <Right>
 noremap! <C-G> <S-Left>
 noremap! <C-T> <S-Right>
 inoremap <C-J> <Down>
 inoremap <C-K> <Up>
-imap jj <Esc>
+inoremap <C-B> <Home>
+inoremap <C-E> <End>
+" alternate escape
+inoremap jj    <Esc>
+" go back to last insert location
+inoremap <C-C> <Esc>'^
+" reverse command search
+cnoremap <C-O> <Up>
+" forward command search
+cnoremap <C-K> <Down>
 " Insert directory of current file
-cmap <C-Y> <C-R>=expand("%:p:h") . "/" <CR>
+cnoremap <C-Y> <C-R>=expand("%:p:h") . "/" <CR>
 
 " visual mode
 " Duplicate a visual selection
@@ -54,15 +58,13 @@ nnoremap <Leader>j <C-w>j
 nnoremap <Leader>k <C-w>k
 nnoremap <Leader>l <C-w>l
 
-" regexp
+" execute last command
+nnoremap <Leader>c @:
+
 " prepends each line with # and preserves indents,useful for programming
 map <C-I>c :s/^\(\s*\)/\1#/ <CR> <BAR>:noh<CR>
 " undoes the above, useful for programming
 map <C-I>d :s/^\(\s\+\)#/\1/ <CR> <BAR>:noh<CR>
-
-" always use 'very magic' mode (i.e. full regexps)
-nnoremap / /\v
-vnoremap / /\v
 
 " =alt keys=
 " mneumonics:t-tag,o-option,a-admin
@@ -77,7 +79,7 @@ map s  :w<CR>
 " :help for current word
 map h  yaw :exe "h ".@" <CR>
 " alternate way to exit insert mode
-map ,    :set imi=1<CR>
+map <Leader>,    :set imi=1<CR>
 " menu of file locations for current word, pick one to go to it
 map a  [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
