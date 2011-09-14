@@ -21,6 +21,10 @@ def install_plugin(repo)
   sh "git clone #{repo} #{DIR}/plugins/#{plugin_name(repo)}"
 end
 
+def update_docs
+  system "vim -e -s <<-EOF\n:Helptags\n:quit\nEOF"
+end
+
 desc "Clone plugins into ~/.vim/plugins"
 task :git_clone do
   plugins.each {|plugin| install_plugin(plugin) }
@@ -41,7 +45,7 @@ task :get_pathogen do
 end
 
 desc "First time install downloads plugins, saves your old vim config and symlinks new one"
-task :install => [:get_pathogen, :git_clone] do
+task :install => [:get_pathogen, :git_clone, :update_docs] do
   home = File.expand_path('~')
 
   %W{#{home}/.vim #{home}/.vimrc}.each do |path|
@@ -53,13 +57,16 @@ task :install => [:get_pathogen, :git_clone] do
 end
 
 desc "Update pathogen and plugins"
-task :update => [:get_pathogen, :git_update]
+task :update => [:get_pathogen, :git_update, :update_docs]
+
+task(:update_docs) { update_docs }
 
 desc "Add a vim plugin with PLUGIN=GIT_REPO"
 task :add do
   repo = translate_plugin ENV['PLUGIN'] || abort("No plugin given")
   install_plugin repo
   save_plugins plugins << repo
+  update_docs
 end
 
 desc "Remove a plugin with PLUGIN=GIT_REPO"
