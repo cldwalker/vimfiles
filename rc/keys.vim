@@ -71,7 +71,8 @@ map <C-I>d :s/^\(\s\+\)#/\1/ <CR> <BAR>:noh<CR>
 
 " misc
 map b  :buffers <CR>
-map tm :!ctags -R<CR>
+map <Leader>tm :!ctags -R --exclude='*.js'<CR>
+map <Leader>tj :exe ":tselect /^".expand("<cword>")<CR>
 " search for text between current position and end of line
 map l  :exe "normal v$hy" <BAR> exe "/".@" <CR>
 " save file
