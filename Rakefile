@@ -35,7 +35,9 @@ task :git_update do
   abort "First run `rake install`" if !File.exists?("#{DIR}/plugins")
 
   plugins.each do |plugin|
-    sh "cd #{DIR}/plugins/#{plugin}; git pull"
+    dir = "#{DIR}/plugins/#{plugin_name(plugin)}"
+    File.directory?(dir) ?  sh("cd #{dir}; git pull") :
+      install_plugin(plugin)
   end
 end
 
