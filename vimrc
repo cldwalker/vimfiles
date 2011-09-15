@@ -56,6 +56,8 @@ set smartcase
 
 " must come before <Leader> is used in mappings
 let mapleader=' '
+" for <LocalLeader> in filetype plugins
+let maplocalleader=';'
 
 " Everything below depends on files + directories in my git repo
 " ==============================================================
