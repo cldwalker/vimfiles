@@ -28,8 +28,8 @@ set expandtab
 " command completion
 " first tab completes like bash, second tab completes first choice
 set wildmode=list:longest,list:full
-set wildmenu                                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*~,.git,*.rbc,vendor/gems/*  "stuff to ignore when tab completing
+set wildmenu                            "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*~,.git,*.rbc,vendor/*   "stuff to ignore when tab completing
 
 " insert completion
 " only complete common characters, show menu + preview
