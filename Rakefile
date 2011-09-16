@@ -22,7 +22,7 @@ def install_plugin(repo)
 end
 
 def update_docs
-  system "vim -e -s <<-EOF\n:Helptags\n:quit\nEOF"
+  system "vim -e -c 'Helptags | quit'"
 end
 
 desc "Clone plugins into ~/.vim/plugins"
