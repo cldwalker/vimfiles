@@ -42,10 +42,10 @@ plugins and is simply a list of git repositories.
 
 Path descriptions:
 
-backup/: used by &backupdir to store backup files
-colors/: slew of colors from scrooloose
-plugin/: plugin-specific vim files
-plugins/: where plugins are git cloned and added to runtime by pathogen
-plugins.txt: list of plugins
-rc/: additional files sourced by vimrc, split up by use i.e. keys + functions
-vimrc: where it all starts - mostly setting options
+* backup/: used by &backupdir to store backup files
+* colors/: slew of colors from scrooloose
+* plugin/: plugin-specific vim files
+* plugins/: where plugins are git cloned and added to runtime by pathogen
+* plugins.txt: list of plugins
+* rc/: additional files sourced by vimrc, split up by use i.e. keys + functions
+* vimrc: where it all starts - mostly setting options
