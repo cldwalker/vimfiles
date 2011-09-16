@@ -64,10 +64,10 @@ let maplocalleader=';'
 " initialize pathogen
 call pathogen#infect('plugins')
 
-" load keys, functions
+" load keys, functions, autoload
 runtime! rc/*.vim
 " load plugin-specific files
-runtime! rc/plugins/*.vim
+runtime! plugin/*.vim
 
 colorscheme vibrantink
 " backup files *~
