@@ -61,11 +61,6 @@ nnoremap <Leader>l <C-w>l
 " execute last command
 nnoremap <Leader>c @:
 
-" prepends each line with # and preserves indents,useful for programming
-map <C-I>c :s/^\(\s*\)/\1#/ <CR> <BAR>:noh<CR>
-" undoes the above, useful for programming
-map <C-I>d :s/^\(\s\+\)#/\1/ <CR> <BAR>:noh<CR>
-
 " =alt keys=
 " mneumonics:t-tag,o-option,a-admin
 
