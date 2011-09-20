@@ -7,3 +7,7 @@ map <Leader>rh :exe "new <BAR> %!yri" expand("<cword>")<CR>
 " fold methods
 set foldmethod=syntax
 set foldlevel=2
+
+" tweak keyword def for *, #
+set iskeyword+=63 " allow ?
+set iskeyword+=33 " allow !
