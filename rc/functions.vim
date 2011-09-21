@@ -75,6 +75,9 @@ map <Leader>gg  :GitGrep
 map <Leader>gw  :exe ":GitGrep " expand("<cword>")<CR>
 map <Leader>gd  :exe ":GitGrep " expand("'def <cword>'")<CR>
 
+command! -nargs=* -complete=file GrepPlugins call Grep(<q-args> . ' ~/.vim/plugins')
+map <Leader>gp  :GrepPlugins 
+
 " Search my keybindings
 command! -nargs=1 GrepKeys :GitGrep '^[a-z]*map.*<args>' after/plugin/*.vim rc
 map <Leader>gk :GrepKeys 
