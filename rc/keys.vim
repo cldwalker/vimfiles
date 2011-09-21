@@ -49,7 +49,7 @@ vnoremap / /\v
 
 " windows
 noremap <C-J> <C-W>_
-noremap <C-M> <C-W>=
+noremap <C-K> <C-W>=
 noremap x  :q<CR>
 noremap q :q!<CR>
 " split navigation
