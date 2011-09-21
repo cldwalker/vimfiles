@@ -39,12 +39,21 @@ function StripTrailingWhiteSpace()
 endfunction
 nnoremap <Leader>s :call StripTrailingWhiteSpace()<CR>
 
-" from github.com/tjennings/git-grep-vim
-let g:gitgrepprg="git\\ grep\\ -n"
+" slimmer version of github.com/mileszs/ack.vim
+function! Ack(args)
+  let grepprg_bak=&grepprg
+  exec "set grepprg=ack\\ -H\\ --nogroup\\ --nocolor"
+  execute "silent! grep " . a:args
+  botright copen
+  let &grepprg=grepprg_bak
+  exec "redraw!"
+endfunction
+command! -nargs=* -complete=file Ack call Ack(<q-args>)
 
+" from github.com/tjennings/git-grep-vim
 function! GitGrep(args)
   let grepprg_bak=&grepprg
-  exec "set grepprg=" . g:gitgrepprg
+  exec "set grepprg=git\\ grep\\ -n"
   execute "silent! grep " . a:args
   botright copen
   let &grepprg=grepprg_bak
@@ -60,6 +69,7 @@ endfunction
 command! -nargs=* -complete=file Grep call Grep(<q-args>)
 
 "Grep shortcuts
+map <Leader>f   :Ack 
 map <Leader>gr  :Grep 
 map <Leader>gg  :GitGrep 
 map <Leader>gw  :exe ":GitGrep " expand("<cword>")<CR>
