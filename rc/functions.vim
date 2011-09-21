@@ -8,7 +8,7 @@ fu! Consolemenu()
 endf
 
 " Open URL - from ryanb/dotfiles
-command -bar -nargs=1 OpenURL :!open <args>
+command! -bar -nargs=1 OpenURL :!open <args>
 function! OpenURL()
   let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
   echo s:uri
@@ -22,7 +22,7 @@ map <Leader>w :call OpenURL()<CR>
 
 " from wuputah/dotfiles
 " remove whitespace
-function StripTrailingWhiteSpace()
+function! StripTrailingWhiteSpace()
   " create a mark to return to
   normal mZ
   %s/\s\+$//e   " strip whitespace from end of lines
