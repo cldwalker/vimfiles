@@ -38,3 +38,33 @@ function StripTrailingWhiteSpace()
   endif
 endfunction
 nnoremap <Leader>s :call StripTrailingWhiteSpace()<CR>
+
+" from github.com/tjennings/git-grep-vim
+let g:gitgrepprg="git\\ grep\\ -n"
+
+function! GitGrep(args)
+  let grepprg_bak=&grepprg
+  exec "set grepprg=" . g:gitgrepprg
+  execute "silent! grep " . a:args
+  botright copen
+  let &grepprg=grepprg_bak
+  exec "redraw!"
+endfunction
+command! -nargs=* -complete=file GitGrep call GitGrep(<q-args>)
+
+function! Grep(args)
+  execute "silent! grep -r " . a:args
+  botright copen
+  exec "redraw!"
+endfunction
+command! -nargs=* -complete=file Grep call Grep(<q-args>)
+
+"Grep shortcuts
+map <Leader>gr  :Grep 
+map <Leader>gg  :GitGrep 
+map <Leader>gw  :exe ":GitGrep " expand("<cword>")<CR>
+map <Leader>gd  :exe ":GitGrep " expand("'def <cword>'")<CR>
+
+" Search my keybindings
+command! -nargs=1 GrepKeys :GitGrep '^[a-z]*map.*<args>' after/plugin/*.vim rc
+map <Leader>gk :GrepKeys 
