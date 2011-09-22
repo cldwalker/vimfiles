@@ -73,7 +73,6 @@ map <Leader>f   :Ack
 map <Leader>gr  :Grep 
 map <Leader>gg  :GitGrep 
 map <Leader>gw  :exe ":GitGrep " expand("<cword>")<CR>
-map <Leader>gd  :exe ":GitGrep " expand("'def <cword>'")<CR>
 
 command! -nargs=* -complete=file GrepPlugins call Grep(<q-args> . ' ~/.vim/plugins')
 map <Leader>gp  :GrepPlugins 
