@@ -13,4 +13,4 @@ set iskeyword+=63 " allow ?
 set iskeyword+=33 " allow !
 
 " search for instance/class method under cursor
-map <Leader>gd  :exe ":GitGrep " expand("'-e def <cword>' --or -e 'def self.<cword>'")<CR>
+map <Leader>gd  :exe ":GitGrep " expand("'-e def <cword>(' --or -e 'def self.<cword>('")<CR>
