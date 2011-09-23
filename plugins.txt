@@ -12,3 +12,4 @@ git://github.com/tpope/vim-surround.git
 https://github.com/msanders/snipmate.vim.git
 git://github.com/skwp/greplace.vim.git
 https://github.com/scrooloose/syntastic.git
+git://github.com/vim-scripts/ZoomWin.git
