@@ -45,9 +45,10 @@ set scrolloff=3
 set sidescrolloff=7
 
 " statusline
-set statusline=%t%m%r%h%w       " defaults
-set statusline+=%y              " filetype
-set statusline+=\ %l/%L\ (%p%%) " line stats
+set statusline=%t%m%r%h%w   " defaults
+set statusline+=%y          " filetype
+set statusline+=\ [%c,%l]   " column and line
+set statusline+=[%LL][%p%%] " line stats
 set laststatus=2
 
 " search - case only matters if searches contain uppercase chars
