@@ -14,3 +14,4 @@ git://github.com/skwp/greplace.vim.git
 https://github.com/scrooloose/syntastic.git
 git://github.com/vim-scripts/ZoomWin.git
 https://github.com/vim-scripts/rubycomplete.vim.git
+git://github.com/vim-scripts/Color-Sampler-Pack.git
