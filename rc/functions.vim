@@ -78,5 +78,9 @@ command! -nargs=* -complete=file GrepPlugins call Grep(<q-args> . ' ~/.vim/plugi
 map <Leader>gp  :GrepPlugins 
 
 " Search my keybindings
-command! -nargs=1 GrepKeys :GitGrep '^[a-z]*map.*<args>' after/plugin/*.vim rc
+command! -nargs=1 GrepKeys :cd ~/.vim | :GitGrep '^[a-z]*map.*<args>' | :cd -
 map <Leader>gk :GrepKeys 
+
+" Search my vim repo
+command! -nargs=* GrepVim :cd ~/.vim | :GitGrep <q-args> | :cd -
+map <Leader>gv :GrepVim 
