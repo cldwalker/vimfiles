@@ -21,8 +21,9 @@ def install_plugin(repo)
   sh "git clone #{repo} #{DIR}/plugins/#{plugin_name(repo)}"
 end
 
+# TODO: undo silencing errors from rubycomplete
 def update_docs
-  system "vim -e -c 'Helptags | quit'"
+  system "vim -e -c 'Helptags | quit' &> /dev/null"
 end
 
 desc "Clone plugins into ~/.vim/plugins"
