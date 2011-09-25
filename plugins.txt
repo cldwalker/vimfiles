@@ -16,3 +16,4 @@ git://github.com/vim-scripts/ZoomWin.git
 git://github.com/vim-scripts/Color-Sampler-Pack.git
 git://github.com/vim-scripts/searchfold.vim.git
 git://github.com/rson/vim-conque.git
+git://github.com/mattn/gist-vim.git
