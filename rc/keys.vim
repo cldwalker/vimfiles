@@ -4,12 +4,13 @@ nnoremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <leader>v <C-w><C-v><C-l>:e ~/.vimrc<CR>
 
 " Tab mappings
-map <Leader>te :tabedit
-map <Leader>tc :tabclose<CR>
+map <Leader>te :tabedit 
+map <Leader>tq :tabclose<CR>
 map <Leader>to :tabonly<CR>
 map <Leader>tn :tabnext<CR>
 map <Leader>tp :tabprevious<CR>
-map <Leader>tm :tabmove
+map <Leader>tm :tabmove 
+map <Leader>tc :tabnew<CR>
 
 " movin in buffer list
 map <Leader>n  :cn<CR>
