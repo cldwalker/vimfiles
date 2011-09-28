@@ -41,30 +41,21 @@ nnoremap <Leader>s :call StripTrailingWhiteSpace()<CR>
 
 " slimmer version of github.com/mileszs/ack.vim
 function! Ack(args)
-  let grepprg_bak=&grepprg
-  exec "set grepprg=ack\\ -H\\ --nogroup\\ --nocolor"
-  execute "silent! grep " . a:args
-  botright copen
-  let &grepprg=grepprg_bak
-  exec "redraw!"
+  cexpr system("ack " . a:args)
+  copen
 endfunction
 command! -nargs=* -complete=file Ack call Ack(<q-args>)
 
 " from github.com/tjennings/git-grep-vim
 function! GitGrep(args)
-  let grepprg_bak=&grepprg
-  exec "set grepprg=git\\ grep\\ -n"
-  execute "silent! grep " . a:args
-  botright copen
-  let &grepprg=grepprg_bak
-  exec "redraw!"
+  cexpr system("git grep -n " . a:args)
+  copen
 endfunction
 command! -nargs=* -complete=file GitGrep call GitGrep(<q-args>)
 
 function! Grep(args)
-  execute "silent! grep -r " . a:args
-  botright copen
-  exec "redraw!"
+  cexpr system("grep -r -n " . a:args)
+  copen
 endfunction
 command! -nargs=* -complete=file Grep call Grep(<q-args>)
 
