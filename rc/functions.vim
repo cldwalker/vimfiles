@@ -41,20 +41,20 @@ nnoremap <Leader>s :call StripTrailingWhiteSpace()<CR>
 
 " slimmer version of github.com/mileszs/ack.vim
 function! Ack(args)
-  cexpr system("ack " . a:args)
+  cexpr system("ack " . shellescape(a:args))
   copen
 endfunction
 command! -nargs=* -complete=file Ack call Ack(<q-args>)
 
 " from github.com/tjennings/git-grep-vim
 function! GitGrep(args)
-  cexpr system("git grep -n " . a:args)
+  cexpr system("git grep -n " . shellescape(a:args))
   copen
 endfunction
 command! -nargs=* -complete=file GitGrep call GitGrep(<q-args>)
 
 function! Grep(args)
-  cexpr system("grep -r -n " . a:args)
+  cexpr system("grep -r -n " . shellescape(a:args))
   copen
 endfunction
 command! -nargs=* -complete=file Grep call Grep(<q-args>)
