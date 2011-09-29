@@ -61,6 +61,7 @@ nnoremap <Leader>l <C-w>l
 
 " execute last command
 nnoremap <Leader>c @:
+map <Leader>ay :let @* = expand("%:p")<CR>:echo "Copied"<CR>
 
 " =alt keys=
 " mneumonics:t-tag,o-option,a-admin

@@ -15,6 +15,7 @@ set shortmess+=IA              " turn off intro + use all abbreviations
 set confirm                    " ask for confirmation on unsaved files instead of denying
 set modelines=5                " process 5 lines of options per file
 set showmatch                  " show matching {,[<
+set visualbell                 " No beeping
 set textwidth=100
 set viminfo='20,\"50,n~/.vim/viminfo
 
