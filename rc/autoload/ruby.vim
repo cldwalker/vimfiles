@@ -14,3 +14,6 @@ set iskeyword+=33 " allow !
 
 " search for instance/class method under cursor
 map <Leader>gd  :exe ":GitGrep " expand("'-e def <cword>(' --or -e 'def self.<cword>('")<CR>
+
+" convert 1.8 hash to 1.9
+command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
