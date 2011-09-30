@@ -16,6 +16,7 @@ set confirm                    " ask for confirmation on unsaved files instead o
 set modelines=5                " process 5 lines of options per file
 set showmatch                  " show matching {,[<
 set visualbell                 " No beeping
+set ttimeoutlen=50             " Faster Esc
 set textwidth=100
 set viminfo='20,\"50,n~/.vim/viminfo
 
