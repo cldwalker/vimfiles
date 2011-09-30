@@ -69,14 +69,18 @@ end
 
 " Everything below depends on files + directories in my git repo
 " ==============================================================
-" initialize pathogen
-call pathogen#infect('plugins')
-
+"
 " load keys, functions, autoload
 runtime! rc/*.vim
-" load plugin-specific files
-runtime! plugin/*.vim
 
-colorscheme vibrantink
+if $NO_VIM_PLUGINS == ''
+  " initialize pathogen
+  call pathogen#infect('plugins')
+  colorscheme vibrantink
+else
+  " disable after/plugin
+  set runtimepath-=~/.vim/after
+endif
+
 " backup files *~
 set backupdir=~/.vim/backup
