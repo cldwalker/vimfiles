@@ -14,9 +14,6 @@ endfunction
 " spell check when writing commit logs
 autocmd filetype svn,*commit* setlocal spell
 
-" Source .vimrc after saving
-autocmd bufwritepost .vimrc source $MYVIMRC
-
 " Autoload ruby.vim once if ruby
 autocmd FileType ruby call AutoCmdRubyOnce()
 function! AutoCmdRubyOnce()
