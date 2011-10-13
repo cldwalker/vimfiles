@@ -62,11 +62,6 @@ let mapleader=' '
 " for <LocalLeader> in filetype plugins
 let maplocalleader=';'
 
-" enable clipboard for macvim
-if version >= 703
-  set clipboard=unnamed
-end
-
 " Everything below depends on files + directories in my git repo
 " ==============================================================
 "
