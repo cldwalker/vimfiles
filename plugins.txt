@@ -19,3 +19,4 @@ git://github.com/rson/vim-conque.git
 git://github.com/mattn/gist-vim.git
 git://github.com/tpope/vim-bundler.git
 https://github.com/vim-scripts/YankRing.vim.git
+https://github.com/sjl/gundo.vim.git
