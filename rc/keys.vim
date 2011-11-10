@@ -86,6 +86,7 @@ set pastetoggle=ot
 map on  :set invnumber <CR>
 map oa  :set invautowrite <CR>
 map ol  :set invlist <CR>
+map or  :set invrelativenumber<CR>
 
 " turn off highlightning
 map oh  :nohls <CR>
