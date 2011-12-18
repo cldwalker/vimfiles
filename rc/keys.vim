@@ -16,6 +16,12 @@ map <Leader>tc :tabnew<CR>
 map <Leader>n  :cn<CR>
 map <Leader>p  :cp<CR>
 
+" code manipulation
+" wraps highlighted block with end and puts cursor at top
+map <Leader>ce >'>o<BS>end<Esc>'<O
+" pastes yank with one indent more than current line's indent
+map <Leader>cp ]pv']>><Esc>
+
 " normal mode
 " make Y consistent with C and D
 nnoremap Y y$
@@ -59,8 +65,6 @@ nnoremap <Leader>j <C-w>j
 nnoremap <Leader>k <C-w>k
 nnoremap <Leader>l <C-w>l
 
-" execute last command
-nnoremap <Leader>c @:
 map <Leader>yf :let @* = expand("%:p")<CR>:echo "Copied"<CR>
 
 " =alt keys=
