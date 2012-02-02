@@ -3,7 +3,7 @@ map <Leader>rm :Rmodel
 map <Leader>rc :Rcontroller
 map <Leader>rv :Rview
 map <Leader>ru :Runittest
-map <Leader>rf :Rfunctionaltest
+map <Leader>rC :Rfunctionaltest
 map <Leader>ri :Rintegrationtest
 
 " Rstep for step navigation
