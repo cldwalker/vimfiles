@@ -5,8 +5,8 @@ let g:autocmd_ruby_loaded=1
 map <Leader>rh :exe "new <BAR> %!yri" expand("<cword>")<CR>
 
 " fold methods
-set foldmethod=syntax
-set foldlevel=2
+" set foldmethod=syntax
+" set foldlevel=2
 
 " tweak keyword def for *, #
 set iskeyword+=63 " allow ?
@@ -16,4 +16,4 @@ set iskeyword+=33 " allow !
 map <Leader>gd  :exe ":GitGrep " expand("'-e def <cword>(' --or -e 'def self.<cword>('")<CR>
 
 " convert 1.8 hash to 1.9
-command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
+command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1: /ge
