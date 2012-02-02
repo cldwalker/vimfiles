@@ -14,7 +14,7 @@ function! s:prefix_for_test(file)
   if a:file =~# '_spec.rb$'
     return "rspec "
   elseif a:file =~# '_test.rb$'
-    return "ruby -Itest "
+    return exists('g:tslime_cmd') ? g:tslime_cmd . ' ' : "ruby -Itest "
   endif
   return ''
 endfunction
@@ -39,4 +39,4 @@ function! s:SendAlternateToTmux(suffix) abort
 endfunction
 
 nnoremap <leader>rt :w \| :call <SID>SendAlternateToTmux("")<CR>
-nnoremap <leader>rl :w \| :call <SID>SendAlternateToTmux(":".line('.'))<CR>
+nnoremap <leader>rl :let g:tslime_cmd='rspec' \| :w \| :call <SID>SendAlternateToTmux(":".line('.'))<CR>
