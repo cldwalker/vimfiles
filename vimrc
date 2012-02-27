@@ -77,5 +77,9 @@ else
   set runtimepath-=~/.vim/after
 endif
 
+if $PAIR
+  set number
+endif
+
 " backup files *~
 set backupdir=~/.vim/backup
