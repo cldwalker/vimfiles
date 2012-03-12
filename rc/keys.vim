@@ -86,14 +86,15 @@ map <Leader>,    :set imi=1<CR>
 map a  [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " toggle options
-set pastetoggle=ot
-map on  :set invnumber <CR>
-map oa  :set invautowrite <CR>
-map ol  :set invlist <CR>
-map or  :set invrelativenumber<CR>
+set pastetoggle=ot "TODO: convert to Leader
+map <Leader>on  :set invnumber <CR>
+map <Leader>oa  :set invautowrite <CR>
+map <Leader>ol  :set invlist <CR>
+map <Leader>or  :set invrelativenumber<CR>
+map <Leader>oc  :set  invcursorcolumn<CR>
 
 " turn off highlightning
-map oh  :nohls <CR>
+map <Leader>oh  :nohls <CR>
 nnoremap <C-L> :nohls<CR><C-L>
 
 " shell cmds
