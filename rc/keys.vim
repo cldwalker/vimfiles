@@ -1,7 +1,9 @@
 " Opens an edit command with the directory of the current edited file filled in
 nnoremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " Quick-open .vimrc
-nnoremap <leader>v <C-w><C-v><C-l>:e ~/.vimrc<CR>
+nnoremap <leader>vv <C-w><C-v><C-l>:e ~/.vimrc<CR>
+" vimdb for a better help
+map <Leader>vi :!rbenv exec vimdb 
 
 " Tab mappings
 map <Leader>te :tabedit 
