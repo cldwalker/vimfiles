@@ -10,3 +10,6 @@ let g:CommandTMatchWindowReverse=1            " keep current choice fixed
 let g:CommandTAcceptSelectionSplitMap='<C-d>' " defaults weren't working
 let g:CommandTCursorStartMap='<C-b>'          " consistent with other maps
 let g:CommandTMaxHeight=20
+
+" remove directories from command-t list
+set wildignore +=bundle/*,node_modules/*,classes/*,lib/*.jar
