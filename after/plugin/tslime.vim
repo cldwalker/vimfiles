@@ -40,3 +40,5 @@ endfunction
 
 nnoremap <leader>rt :w \| :call <SID>SendAlternateToTmux("")<CR>
 nnoremap <leader>rl :let g:tslime_cmd='rspec' \| :w \| :call <SID>SendAlternateToTmux(":".line('.'))<CR>
+nnoremap <leader>re :call Send_to_Tmux(getline('.') . "\n")<CR>
+vmap <leader>rs "ry :call Send_to_Tmux(@r)<CR>
