@@ -11,9 +11,6 @@ function! SetCursorPosition()
     end
 endfunction
 
-" spell check when writing commit logs
-autocmd filetype svn,*commit* setlocal spell
-
 " Autoload ruby.vim once if ruby
 autocmd FileType ruby call AutoCmdRubyOnce()
 function! AutoCmdRubyOnce()
