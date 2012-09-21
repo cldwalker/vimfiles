@@ -22,6 +22,15 @@ function! AutoCmdRubyOnce()
   endif
 endfunction
 
+" WIP - doesn't override vimclojure isk yet
+" autocmd FileType clojure call SetupClojure()
+" function! SetupClojure()
+"   echo &isk
+"   set iskeyword-=& "wtf - following line doesn't work w/o removing this first
+"   set iskeyword-=/ "allow ctags to traverse namespaced fns i.e. user/admin?
+"   echo &isk
+" endfunction
+
 " automatically remove trailing whitespace before write
 function! ConditionalStripTrailingWhitespace()
   if exists("b:stripWhitespace") && b:stripWhitespace == 1 && g:stripWhitespace == 1
