@@ -19,6 +19,7 @@ set visualbell                 " No beeping
 set ttimeoutlen=50             " Faster Esc
 set textwidth=100
 set viminfo='20,\"50,n~/.vim/viminfo
+set hidden                     " Be able to undo after switching away from a buffer
 
 " tabs + whitespace
 set tabstop=2
