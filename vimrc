@@ -70,7 +70,7 @@ runtime! rc/*.vim
 
 if $NO_VIM_PLUGINS == ''
   " initialize pathogen
-  call pathogen#infect('plugins')
+  call pathogen#infect('plugins/{}')
   colorscheme vibrantink
 else
   " disable after/plugin
