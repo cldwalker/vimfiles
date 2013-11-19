@@ -12,15 +12,14 @@ https://github.com/msanders/snipmate.vim.git
 git://github.com/skwp/greplace.vim.git
 https://github.com/scrooloose/syntastic.git
 git://github.com/vim-scripts/ZoomWin.git
-git://github.com/vim-scripts/Color-Sampler-Pack.git
 git://github.com/vim-scripts/searchfold.vim.git
-git://github.com/rson/vim-conque.git
 git://github.com/mattn/gist-vim.git
 git://github.com/tpope/vim-bundler.git
-https://github.com/vim-scripts/YankRing.vim.git
 https://github.com/sjl/gundo.vim.git
 https://github.com/jimmyharris/tslime.vim.git
 https://github.com/emezeske/paredit.vim.git
 https://github.com/kien/ctrlp.vim.git
 git://github.com/tpope/vim-fireplace.git
+https://github.com/vim-scripts/YankRing.vim.git
 git://github.com/guns/vim-clojure-static.git
+http://github.com/vim-scripts/Colour-Sampler-Pack.git
