@@ -50,3 +50,4 @@ autocmd BufNewFile,BufRead *.haml setf haml
 autocmd BufNewFile,BufRead *.sass setf sass
 autocmd BufNewFile,BufRead *.scss setf scss
 autocmd BufNewFile,BufRead *.cljs setf clojure
+autocmd BufNewFile,BufRead *.edn  setf clojure
