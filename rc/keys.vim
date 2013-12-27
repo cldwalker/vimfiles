@@ -88,7 +88,7 @@ map <Leader>,    :set imi=1<CR>
 map a  [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " toggle options
-set pastetoggle=ot "TODO: convert to Leader
+map <Leader>ot  :set invpaste <CR>
 map <Leader>on  :set invnumber <CR>
 map <Leader>oa  :set invautowrite <CR>
 map <Leader>ol  :set invlist <CR>
