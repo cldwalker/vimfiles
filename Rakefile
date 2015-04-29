@@ -43,7 +43,7 @@ end
 
 task :get_pathogen do
   url = "https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim"
-  sh "curl #{url} > #{DIR}/autoload/pathogen.vim"
+  sh "curl -L #{url} > #{DIR}/autoload/pathogen.vim"
 end
 
 desc "First time install downloads plugins, saves your old vim config and symlinks new one"
