@@ -26,3 +26,6 @@ map -k :call Omove("k") <CR>
 map -f O <C-[> k dd
 "delete current node and unindent the following node and its children
 map -sw  dd v ]z <<
+
+autocmd FileType votl set expandtab
+autocmd FileType votl set shiftwidth=2
