@@ -10,7 +10,7 @@ def save_plugins(plugins)
 end
 
 def translate_plugin(name)
-  name[%r{^[^/]+/[^/]+$}] ? "git://github.com/#{name}.git" : name
+  name[%r{^[^/]+/[^/]+$}] ? "https://github.com/#{name}.git" : name
 end
 
 def plugin_name(repo)
