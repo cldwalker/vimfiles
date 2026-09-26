@@ -5,7 +5,7 @@ let g:autocmd_ruby_loaded=1
 map <Leader>rh :exe "new <BAR> %!yri" expand("<cword>")<CR>
 
 " fold methods
-function! b:ToggleRubyFolding()
+function! ToggleRubyFolding()
   if &foldmethod != 'syntax'
     set foldmethod=syntax
     set foldlevel=2
@@ -14,7 +14,7 @@ function! b:ToggleRubyFolding()
     set foldlevel=1000 "open all folds
   endif
 endfunction
-map <Leader>rf :call b:ToggleRubyFolding()<CR>
+map <Leader>rf :call ToggleRubyFolding()<CR>
 
 " tweak keyword def for *, #
 set iskeyword+=63 " allow ?
